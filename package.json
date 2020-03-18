@@ -4,6 +4,25 @@
   "description": "Trecli - Typescript React CLI",
   "author": "Piotr Baran (piotros)",
   "bin": "./index.js",
+  "scripts": {
+    "update": "npx npm-check -u"
+  },
+  "devDependencies": {
+    "husky": "^4.2.3",
+    "lint-staged": "^10.0.8",
+    "prettier": "^1.19.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,css,json,md,ts,tsx}": "prettier --write"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
   "license": "MIT",
   "keywords": [
     "react",
