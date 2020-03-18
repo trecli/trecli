@@ -1,4 +1,4 @@
-export const component = data => `import React from 'react';
+const component = data => `import React from 'react';
 
 import { ${data.componentName}Props } from './${data.componentName}.interfaces';
 ${getStylesImportTemplate(data)}\
@@ -32,4 +32,8 @@ const getStylesUsageTemplate = data => {
     default:
       return '';
   }
+};
+
+module.exports = {
+  component
 };

@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
-import inquirer from 'inquirer';
-import inquirerFuzzyPath from 'inquirer-fuzzy-path';
+const inquirer = require('inquirer');
+const inquirerFuzzyPath = require('inquirer-fuzzy-path');
 
-import { handleError } from './lib/handleError.js';
-import { generate } from './lib/generate.js';
-import { questions } from './lib/questions.js';
+const { handleError } = require('./lib/handleError.js');
+const { generate } = require('./lib/generate.js');
+const { questions } = require('./lib/questions.js');
 
 inquirer.registerPrompt('fuzzypath', inquirerFuzzyPath);
 
