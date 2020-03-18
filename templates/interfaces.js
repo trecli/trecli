@@ -1,3 +1,7 @@
-export const interfaces = data => `export interface ${data.componentName}Props {
+const interfaces = data => `export interface ${data.componentName}Props {
 
 }`;
+
+module.exports = {
+  interfaces
+};

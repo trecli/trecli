@@ -4,7 +4,6 @@
   "description": "Trecli - Typescript React CLI",
   "author": "Piotr Baran (piotros)",
   "bin": "./index.js",
-  "type": "module",
   "scripts": {
     "update": "npx npm-check -u"
   },
