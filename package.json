@@ -4,8 +4,15 @@
   "description": "Trecli - Typescript React CLI",
   "author": "Piotr Baran (piotros)",
   "bin": "./index.js",
+  "type": "module",
   "scripts": {
     "update": "npx npm-check -u"
+  },
+  "dependencies": {
+    "camelcase": "^5.3.1",
+    "fs-extra": "^8.1.0",
+    "inquirer": "^7.1.0",
+    "inquirer-fuzzy-path": "^2.2.0"
   },
   "devDependencies": {
     "husky": "^4.2.3",
