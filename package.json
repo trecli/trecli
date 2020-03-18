@@ -1,0 +1,13 @@
+{
+  "name": "trecli",
+  "version": "0.0.0",
+  "description": "Trecli - Typescript React CLI",
+  "author": "Piotr Baran (piotros)",
+  "bin": "./index.js",
+  "license": "MIT",
+  "keywords": [
+    "react",
+    "typescript",
+    "cli"
+  ]
+}
