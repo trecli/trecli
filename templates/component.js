@@ -12,27 +12,21 @@ ${getStylesUsageTemplate(data)}\
 
 export default ${data.componentName};`;
 
-const getStylesImportTemplate = data => {
-  switch (data.styles) {
-    case 'none':
-      return '';
-    case 'material-ui':
-      return `import { useStyles } from './${data.componentName}.styles';\n`;
-    default:
-      return '';
-  }
-};
+const getStylesImportTemplate = data =>
+  ({
+    none: '',
+    css: `import './${data.componentName}.css';\n`,
+    'css-modules': `import styles from './${data.componentName}.module.css';\n`,
+    'material-ui': `import { useStyles } from './${data.componentName}.styles';\n`
+  }[data.styles]);
 
-const getStylesUsageTemplate = data => {
-  switch (data.styles) {
-    case 'none':
-      return '';
-    case 'material-ui':
-      return `  const classes = useStyles();\n\n`;
-    default:
-      return '';
-  }
-};
+const getStylesUsageTemplate = data =>
+  ({
+    none: '',
+    css: '',
+    'css-modules': '',
+    'material-ui': `  const classes = useStyles();\n\n`
+  }[data.styles]);
 
 module.exports = {
   component
