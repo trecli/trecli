@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "camelcase": "^5.3.1",
+    "chalk": "^3.0.0",
     "fs-extra": "^8.1.0",
     "inquirer": "^7.1.0",
     "inquirer-fuzzy-path": "^2.2.0",
