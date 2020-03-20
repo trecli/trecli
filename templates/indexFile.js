@@ -1,7 +1,7 @@
 const indexFile = data => {
-  const { componentName, isLazyLoaded } = data;
+  const { componentName, lazyLoaded } = data;
 
-  return isLazyLoaded
+  return lazyLoaded
     ? `export { default } from './${componentName}';`
     : `export { default as ${componentName} } from './${componentName}';`;
 };

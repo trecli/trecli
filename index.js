@@ -1,6 +1,10 @@
 #!/usr/bin/env node
 
+const {
+  getGeneratorConfigFromArgv
+} = require('./lib/getGeneratorConfigFromArgv.js');
 const { runInteractiveGenerator } = require('./lib/runInteractiveGenerator.js');
+const { generateComponent } = require('./lib/generateComponent.js');
 
 require('yargs')
   .command(
@@ -20,10 +24,10 @@ require('yargs')
         describe:
           'Component name that will be applied to component directory and component files (excluding index.ts)'
       });
-      yargs.option('style', {
+      yargs.option('styles', {
         alias: 's',
         describe: 'Select style solution',
-        choices: ['material-ui', 'css', 'css-modules']
+        choices: ['css', 'css-modules', 'material-ui']
       });
       yargs.option('lazy-loaded', {
         type: 'boolean',
@@ -43,7 +47,8 @@ require('yargs')
       yargs.option('quiet', {
         type: 'boolean',
         alias: 'q',
-        describe: 'Be quiet, only report errors'
+        describe: 'Be quiet, only report errors',
+        conflicts: ['dry-run', 'verbose']
       });
       yargs.check(argv => {
         if (!argv.ComponentName && !argv.interactive) {
@@ -54,10 +59,12 @@ require('yargs')
       });
     },
     argv => {
-      console.log(argv);
       if (argv.interactive) {
         runInteractiveGenerator();
+        return;
       }
+      const generatorConfig = getGeneratorConfigFromArgv(argv);
+      generateComponent(generatorConfig);
     }
   )
   .option('verbose', {
