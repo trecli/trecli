@@ -1,6 +1,6 @@
 const component = data => `import React from 'react';
 
-import { ${data.componentName}Props } from './${data.componentName}.interfaces';
+import { ${data.componentName}Props } from './${data.componentName}.interface';
 ${getStylesImportTemplate(data)}\
 
 const ${data.componentName}: React.FunctionComponent<${
