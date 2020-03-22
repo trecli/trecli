@@ -1,4 +1,4 @@
-const getGeneratorConfigFromArgv = argv => {
+const mapper = argv => {
   const {
     ComponentName: componentName,
     dryRun,
@@ -20,5 +20,5 @@ const getGeneratorConfigFromArgv = argv => {
 };
 
 module.exports = {
-  getGeneratorConfigFromArgv
+  mapper
 };

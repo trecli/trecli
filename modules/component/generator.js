@@ -2,14 +2,18 @@ const camelCase = require('camelcase');
 const fs = require('fs-extra');
 const path = require('path');
 
-const { component } = require('../templates/component.js');
-const { emptyFile } = require('../templates/emptyFile');
-const { indexFile } = require('../templates/indexFile.js');
-const { interfaces } = require('../templates/interfaces.js');
-const { materialUiStyles } = require('../templates/materialUiStyles.js');
-const { showError, showNonQuietInfo, showVerboseInfo } = require('./logger');
+const {
+  showError,
+  showNonQuietInfo,
+  showVerboseInfo
+} = require('../../lib/logger');
+const { component } = require('./templates/component');
+const { emptyFile } = require('./templates/emptyFile');
+const { indexFile } = require('./templates/indexFile');
+const { interfaces } = require('./templates/interfaces');
+const { materialUiStyles } = require('./templates/materialUiStyles');
 
-function generateComponent(answers) {
+function generator(answers) {
   const data = {
     ...answers,
     componentName: camelCase(answers.componentName, { pascalCase: true })
@@ -62,5 +66,5 @@ function generateComponent(answers) {
 }
 
 module.exports = {
-  generateComponent
+  generator
 };
