@@ -3,7 +3,9 @@ const questions = [
     type: 'input',
     name: 'componentName',
     message: 'Component name:',
-    validate: (value) => true || 'Pass a valid component name', // TODO add validation
+    validate: (value) =>
+      /^[a-zA-Z][0-9a-zA-Z]*([-_][0-9a-zA-Z]+)*$/.test(value.trim()) ||
+      'Pass a valid component name',
   },
   {
     type: 'fuzzypath',
