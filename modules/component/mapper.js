@@ -1,11 +1,11 @@
-const mapper = argv => {
+const mapper = (argv) => {
   const {
     ComponentName: componentName,
     dryRun,
     lazyLoaded,
     quiet,
     styles = 'none',
-    verbose
+    verbose,
   } = argv;
 
   return {
@@ -15,10 +15,10 @@ const mapper = argv => {
     location: '.', // TODO remove hardcode
     quiet,
     styles,
-    verbose
+    verbose,
   };
 };
 
 module.exports = {
-  mapper
+  mapper,
 };

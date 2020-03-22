@@ -11,6 +11,6 @@ yargs
   .option('verbose', {
     alias: 'v',
     type: 'boolean',
-    description: 'Run with verbose logging'
+    description: 'Run with verbose logging',
   })
   .parse();

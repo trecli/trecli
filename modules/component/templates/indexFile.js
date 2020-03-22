@@ -1,4 +1,4 @@
-const indexFile = data => {
+const indexFile = (data) => {
   const { componentName, lazyLoaded } = data;
 
   return lazyLoaded
@@ -7,5 +7,5 @@ const indexFile = data => {
 };
 
 module.exports = {
-  indexFile
+  indexFile,
 };

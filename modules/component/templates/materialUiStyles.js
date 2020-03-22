@@ -5,5 +5,5 @@ export const useStyles = makeStyles(({  }: Theme) => ({
 }));`;
 
 module.exports = {
-  materialUiStyles
+  materialUiStyles,
 };

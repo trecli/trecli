@@ -1,5 +1,5 @@
 const emptyFile = () => '';
 
 module.exports = {
-  emptyFile
+  emptyFile,
 };

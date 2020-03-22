@@ -5,7 +5,7 @@ const path = require('path');
 const {
   showError,
   showNonQuietInfo,
-  showVerboseInfo
+  showVerboseInfo,
 } = require('../../lib/logger');
 const { component } = require('./templates/component');
 const { emptyFile } = require('./templates/emptyFile');
@@ -16,7 +16,7 @@ const { materialUiStyles } = require('./templates/materialUiStyles');
 function generator(answers) {
   const data = {
     ...answers,
-    componentName: camelCase(answers.componentName, { pascalCase: true })
+    componentName: camelCase(answers.componentName, { pascalCase: true }),
   };
 
   const componentDirectory = path.join(data.location, data.componentName);
@@ -52,7 +52,7 @@ function generator(answers) {
     return {
       css: '.css',
       'css-modules': '.module.css',
-      'material-ui': '.styles.ts'
+      'material-ui': '.styles.ts',
     }[data.styles];
   }
 
@@ -60,11 +60,11 @@ function generator(answers) {
     return {
       css: emptyFile,
       'css-modules': emptyFile,
-      'material-ui': materialUiStyles
+      'material-ui': materialUiStyles,
     }[data.styles];
   }
 }
 
 module.exports = {
-  generator
+  generator,
 };
