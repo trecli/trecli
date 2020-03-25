@@ -3,17 +3,14 @@
 const yargs = require('yargs');
 
 const { getConfigFromFile } = require('./lib/getConfigFromFile');
+const { sharedOptions } = require('./lib/sharedOptions');
 const { command: componentCommand } = require('./modules/component/command');
-const { command: initCommand } = require('./modules/init/command');
+const { command: configCommand } = require('./modules/config/command');
 
 yargs
   .showHelpOnFail(false)
   .config(getConfigFromFile())
-  .command(initCommand)
+  .command(configCommand)
   .command(componentCommand)
-  .option('verbose', {
-    alias: 'v',
-    type: 'boolean',
-    description: 'Run with verbose logging',
-  })
+  .options(sharedOptions)
   .parse();

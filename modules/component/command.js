@@ -35,17 +35,6 @@ const command = {
       alias: 'i',
       describe: 'Run interactive mode',
     });
-    yargs.option('dry-run', {
-      type: 'boolean',
-      alias: 'd',
-      describe: 'Don’t write anything, show what would be done',
-    });
-    yargs.option('quiet', {
-      type: 'boolean',
-      alias: 'q',
-      describe: 'Be quiet, only report errors',
-      conflicts: ['dry-run', 'verbose'],
-    });
     yargs.check((argv) => {
       if (!argv.ComponentName && !argv.interactive) {
         throw getError(
