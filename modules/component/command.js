@@ -1,6 +1,7 @@
 const {
   runInteractiveGenerator,
-} = require('../../lib/runInteractiveGenerator.js');
+} = require('../../lib/runInteractiveGenerator');
+const { getError } = require('../../lib/logger');
 const { generator } = require('./generator');
 const { mapper } = require('./mapper');
 const { questions } = require('./questions');
@@ -47,7 +48,9 @@ const command = {
     });
     yargs.check((argv) => {
       if (!argv.ComponentName && !argv.interactive) {
-        throw 'Not enough non-option arguments: got 0, need at least 1';
+        throw getError(
+          `Specify component name or run '${argv.$0} --help' for more information`
+        );
       } else {
         return true;
       }
