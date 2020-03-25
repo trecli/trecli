@@ -7,6 +7,7 @@ const { command: componentCommand } = require('./modules/component/command');
 const { command: initCommand } = require('./modules/init/command');
 
 yargs
+  .showHelpOnFail(false)
   .config(getConfigFromFile())
   .command(initCommand)
   .command(componentCommand)
