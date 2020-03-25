@@ -10,6 +10,7 @@
 - [ ] Config file generator
 - [ ] .spec/.test file generator
 - [ ] Support for Redux Toolkit slices
+- [ ] Support for JS (non-TS) components
 - [ ] Docs
 
 ## Under consideration
