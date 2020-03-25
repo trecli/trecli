@@ -2,10 +2,12 @@
 
 const yargs = require('yargs');
 
+const { getConfigFromFile } = require('./lib/getConfigFromFile');
 const { command: componentCommand } = require('./modules/component/command');
 const { command: initCommand } = require('./modules/init/command');
 
 yargs
+  .config(getConfigFromFile())
   .command(initCommand)
   .command(componentCommand)
   .option('verbose', {
