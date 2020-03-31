@@ -12,6 +12,7 @@
 - [ ] Support for Redux Toolkit slices
 - [ ] Support for JS (non-TS) components
 - [ ] Docs
+- [ ] Rewrite codebase to TS
 
 ## Under consideration
 
