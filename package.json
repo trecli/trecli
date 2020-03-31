@@ -3,6 +3,7 @@
   "version": "0.0.5",
   "description": "Trecli - Typescript React CLI",
   "author": "Piotr Baran (piotros)",
+  "repository": "https://github.com/trecli/trecli",
   "bin": "./index.js",
   "scripts": {
     "update": "npx npm-check -u"
