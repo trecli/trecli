@@ -1,4 +1,14 @@
-# ![trecli_logo](https://user-images.githubusercontent.com/3486023/77478649-9d93ba00-6e1e-11ea-9a5d-5e5e722344c1.png)
+<p align="center">
+    <img alt="trecli logo" src="https://user-images.githubusercontent.com/3486023/78069677-c544ce00-739a-11ea-9cd3-8896dfecd6ee.png" width="84px" height="84px">
+</p>
+
+<h3 align="center">
+  Trecli
+</h3>
+
+<p align="center">
+  Typescript React CLI
+</p>
 
 | :warning: | This tools is currently under intensive development          | :warning: |
 | --------- | ------------------------------------------------------------ | --------- |
