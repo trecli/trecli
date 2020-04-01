@@ -11,6 +11,12 @@ const { name: packageName } = require('./package.json');
 yargs
   .scriptName(packageName)
   .showHelpOnFail(false)
+  .usage('$0 <port>', 'start the application server', (yargs) => {
+    yargs.positional('port', {
+      describe: 'the port that your application should bind to',
+      type: 'number',
+    });
+  })
   .config(getConfigFromFile())
   .command(configCommand)
   .command(componentCommand)
