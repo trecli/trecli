@@ -15,4 +15,5 @@ yargs
   .options(sharedOptions)
   .alias('help', 'h')
   .alias('version', 'v')
+  .wrap(Math.min(100, yargs.terminalWidth()))
   .parse();
