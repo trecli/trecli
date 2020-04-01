@@ -10,7 +10,9 @@ const { command: configCommand } = require('./modules/config/command');
 yargs
   .showHelpOnFail(false)
   .config(getConfigFromFile())
-  .command(componentCommand)
   .command(configCommand)
+  .command(componentCommand)
   .options(sharedOptions)
+  .alias('help', 'h')
+  .alias('version', 'v')
   .parse();
