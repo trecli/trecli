@@ -12,7 +12,6 @@ const command = {
     'c [ComponentName]',
     '$0 [ComponentName]',
   ],
-  // TODO read and improve if possible: https://github.com/yargs/yargs/blob/master/docs/advanced.md#providing-a-command-module
   describe: 'Create component directory and files',
   builder: (yargs) => {
     yargs.positional('ComponentName', {
