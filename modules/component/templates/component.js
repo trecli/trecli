@@ -20,7 +20,7 @@ const component = (data) => {
 import { ${componentName}Props } from './${componentName}.interface';
 ${stylesImport}\
 
-const ${componentName}: React.FunctionComponent<${componentName}Props> = ({}) => {
+const ${componentName}: React.FC<${componentName}Props> = () => {
 ${stylesUsage}\
   return <>${componentName} rendered</>;
 };
