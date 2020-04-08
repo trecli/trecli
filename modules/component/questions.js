@@ -19,6 +19,12 @@ const questions = [
   },
   {
     type: 'confirm',
+    name: 'index',
+    message: 'With index file?',
+    default: false,
+  },
+  {
+    type: 'confirm',
     name: 'lazyLoaded',
     message: 'Is lazy loaded?',
     default: false,

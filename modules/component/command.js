@@ -17,17 +17,22 @@ const command = {
     yargs.positional('ComponentName', {
       type: 'string',
       describe:
-        'Component name that will be applied to component directory and component files (excluding index.ts)',
+        'Component name that will be applied to component directory and component files',
     });
     yargs.option('styles', {
       alias: 's',
       describe: 'Select style solution',
       choices: ['css', 'css-modules', 'material-ui', false],
     });
+    yargs.option('index', {
+      type: 'boolean',
+      alias: 'idx',
+      describe: 'Create index file',
+    });
     yargs.option('lazy-loaded', {
       type: 'boolean',
       alias: 'l',
-      describe: "Create index.ts with 'default' exported",
+      describe: "Create component with 'default' exported",
     });
     yargs.option('interactive', {
       type: 'boolean',

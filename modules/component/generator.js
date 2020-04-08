@@ -27,7 +27,9 @@ function generator(answers) {
     if (!data.dryRun) {
       fs.mkdirSync(componentDirectory);
     }
-    createFile('index.ts', indexFile);
+    if (data.index) {
+      createFile('index.ts', indexFile);
+    }
     createFile(data.componentName + '.tsx', component);
     createFile(data.componentName + '.interface.ts', interfaces);
     if (!data.styles) {

@@ -1,5 +1,5 @@
 const component = (data) => {
-  const { componentName, styles } = data;
+  const { componentName, index, lazyLoaded, styles } = data;
 
   const stylesImport =
     {
@@ -20,12 +20,12 @@ const component = (data) => {
 import { ${componentName}Props } from './${componentName}.interface';
 ${stylesImport}\
 
-function ${componentName}({  }: ${componentName}Props) {
+${
+  index || lazyLoaded ? 'export default function' : 'export function'
+} ${componentName}({  }: ${componentName}Props) {
 ${stylesUsage}\
   return <>${componentName} rendered</>;
-}
-
-export default ${componentName};`;
+}`;
 };
 
 module.exports = {
