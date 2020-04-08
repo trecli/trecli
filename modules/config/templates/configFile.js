@@ -1,5 +1,5 @@
 const configFile = () => `module.exports = {
-  styles: undefined, // accepts:  'css', 'css-modules', 'material-ui'
+  styles: false, // accepts:  'css', 'css-modules', 'material-ui', false
   lazyLoaded: false,
 };`;
 

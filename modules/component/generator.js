@@ -30,7 +30,7 @@ function generator(answers) {
     createFile('index.ts', indexFile);
     createFile(data.componentName + '.tsx', component);
     createFile(data.componentName + '.interface.ts', interfaces);
-    if (data.styles === 'none') {
+    if (!data.styles) {
       return;
     }
     createFile(data.componentName + getStylesExtension(), getStylesTemplate());

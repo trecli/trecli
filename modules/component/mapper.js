@@ -4,7 +4,7 @@ const mapper = (argv) => {
     dryRun,
     lazyLoaded,
     quiet,
-    styles = 'none',
+    styles = false,
     verbose,
   } = argv;
 

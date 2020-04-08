@@ -28,7 +28,7 @@ const questions = [
     name: 'styles',
     message: 'Style solution:',
     choices: [
-      { name: 'None', value: 'none' },
+      { name: 'None', value: false },
       { name: 'CSS', value: 'css' },
       { name: 'CSS Modules', value: 'css-modules' },
       { name: 'Material-UI', value: 'material-ui' },

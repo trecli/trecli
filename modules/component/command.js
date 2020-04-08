@@ -22,7 +22,7 @@ const command = {
     yargs.option('styles', {
       alias: 's',
       describe: 'Select style solution',
-      choices: ['css', 'css-modules', 'material-ui'],
+      choices: ['css', 'css-modules', 'material-ui', false],
     });
     yargs.option('lazy-loaded', {
       type: 'boolean',
