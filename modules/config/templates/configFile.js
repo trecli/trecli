@@ -1,7 +1,7 @@
 const configFile = () => `module.exports = {
   index: false,
-  styles: false, // accepts:  'css', 'css-modules', 'material-ui', false
   lazyLoaded: false,
+  styles: false, // accepts:  'css', 'css-modules', 'material-ui', false
 };`;
 
 module.exports = {
