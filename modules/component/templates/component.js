@@ -22,7 +22,7 @@ ${stylesImport}\
 
 ${
   index || lazyLoaded ? 'export default function' : 'export function'
-} ${componentName}({  }: ${componentName}Props) {
+} ${componentName}(props: ${componentName}Props) {
 ${stylesUsage}\
   return <>${componentName} rendered</>;
 }`;
