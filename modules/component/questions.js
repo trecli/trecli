@@ -1,38 +1,38 @@
 const questions = [
   {
-    type: 'input',
     name: 'componentName',
     message: 'Component name:',
+    type: 'input',
     validate: (value) =>
       /^[a-zA-Z][0-9a-zA-Z]*([-_][0-9a-zA-Z]+)*$/.test(value.trim()) ||
       'Pass a valid component name',
   },
   {
-    type: 'fuzzypath',
     name: 'location',
+    message: 'Target location:',
+    type: 'fuzzypath',
+    itemType: 'directory',
     excludePath: (nodePath) =>
       ['build', 'node_modules', '.git', '.idea'].some((excludedPath) =>
         nodePath.startsWith(excludedPath)
       ),
-    itemType: 'directory',
-    message: 'Target location:',
   },
   {
-    type: 'confirm',
     name: 'index',
     message: 'With index file?',
+    type: 'confirm',
     default: false,
   },
   {
-    type: 'confirm',
     name: 'lazyLoaded',
     message: 'Is lazy loaded?',
+    type: 'confirm',
     default: false,
   },
   {
-    type: 'list',
     name: 'styles',
     message: 'Style solution:',
+    type: 'list',
     choices: [
       { name: 'None', value: false },
       { name: 'CSS', value: 'css' },
