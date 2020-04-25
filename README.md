@@ -21,6 +21,7 @@
 - [ ] .spec/.test file generator
 - [ ] Support for Redux Toolkit slices
 - [ ] Support for JS (non-TS) components
+- [ ] Support for Storybook stories
 - [ ] Docs
 - [ ] Rewrite codebase to TS
 
