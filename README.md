@@ -16,11 +16,10 @@
 
 ## TODO
 
-- [ ] Config file support
-- [ ] Config file generator
+- [x] Config file support
+- [x] Config file generator
 - [ ] .spec/.test file generator
 - [ ] Support for Redux Toolkit slices
-- [ ] Support for JS (non-TS) components
 - [ ] Support for Storybook stories
 - [ ] Docs
 - [ ] Rewrite codebase to TS
@@ -30,3 +29,4 @@
 - [ ] More styling solutions
 - [ ] Custom templates
 - [ ] Generic solution for custom generators
+- [ ] Support for JS (non-TS) components
