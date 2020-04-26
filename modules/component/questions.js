@@ -1,8 +1,9 @@
-const questions = [
+const questions = ({ componentName, index, lazyLoaded, styles }) => [
   {
     name: 'componentName',
     message: 'Component name:',
     type: 'input',
+    default: componentName,
     validate: (value) =>
       /^[a-zA-Z][0-9a-zA-Z]*([-_][0-9a-zA-Z]+)*$/.test(value.trim()) ||
       'Pass a valid component name',
@@ -21,18 +22,19 @@ const questions = [
     name: 'index',
     message: 'With index file?',
     type: 'confirm',
-    default: false,
+    default: index,
   },
   {
     name: 'lazyLoaded',
     message: 'Is lazy loaded?',
     type: 'confirm',
-    default: false,
+    default: lazyLoaded,
   },
   {
     name: 'styles',
     message: 'Style solution:',
     type: 'list',
+    default: styles,
     choices: [
       { name: 'None', value: false },
       { name: 'CSS', value: 'css' },

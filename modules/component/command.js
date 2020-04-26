@@ -1,10 +1,11 @@
-const {
-  runInteractiveGenerator,
-} = require('../../lib/runInteractiveGenerator');
 const { getError } = require('../../lib/logger');
 const { generator } = require('./generator');
 const { mapper } = require('./mapper');
 const { questions } = require('./questions');
+const { runGenerator } = require('../../lib/runGenerator');
+const {
+  runInteractiveGenerator,
+} = require('../../lib/runInteractiveGenerator');
 
 const command = {
   command: [
@@ -51,11 +52,10 @@ const command = {
   },
   handler: (argv) => {
     if (argv.interactive) {
-      runInteractiveGenerator(questions, generator); // TODO pass flags as question defaults
-      return;
+      runInteractiveGenerator({ generator, argv, mapper, questions });
+    } else {
+      runGenerator({ generator, argv, mapper });
     }
-    const generatorConfig = mapper(argv);
-    generator(generatorConfig);
   },
 };
 

@@ -1,12 +1,12 @@
 const mapper = ({
   ComponentName: componentName,
-  dryRun,
-  index,
-  lazyLoaded,
+  dryRun = false,
+  index = false,
+  lazyLoaded = false,
   location = '.', // TODO remove hardcode
-  quiet,
-  styles,
-  verbose,
+  quiet = false,
+  styles = false,
+  verbose = false,
 }) => ({
   componentName,
   dryRun,
