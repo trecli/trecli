@@ -32,7 +32,7 @@ const questions = ({ componentName, index, lazyLoaded, styles }) => [
   },
   {
     name: 'styles',
-    message: 'Style solution:',
+    message: 'Styles solution:',
     type: 'list',
     default: styles,
     choices: [

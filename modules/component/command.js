@@ -22,7 +22,7 @@ const command = {
     });
     yargs.option('styles', {
       alias: 's',
-      describe: 'Select style solution',
+      describe: 'Select styles solution',
       choices: ['css', 'css-modules', 'material-ui', false],
     });
     yargs.option('index', {
