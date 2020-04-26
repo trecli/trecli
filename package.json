@@ -1,6 +1,6 @@
 {
   "name": "trecli",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Trecli - Typescript React CLI",
   "author": "Piotr Baran (piotros)",
   "repository": "https://github.com/trecli/trecli",
