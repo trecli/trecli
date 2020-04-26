@@ -2,11 +2,8 @@ const camelCase = require('camelcase');
 const fs = require('fs-extra');
 const path = require('path');
 
-const {
-  showError,
-  showNonQuietInfo,
-  showVerboseInfo,
-} = require('../../lib/logger');
+const { createFile } = require('../../lib/createFile');
+const { showError } = require('../../lib/logger');
 const { component } = require('./templates/component');
 const { emptyFile } = require('./templates/emptyFile');
 const { indexFile } = require('./templates/indexFile');
@@ -28,26 +25,22 @@ function generator(answers) {
       fs.mkdirSync(componentDirectory);
     }
     if (data.index) {
-      createFile('index.ts', indexFile);
+      saveFile('index.ts', indexFile);
     }
-    createFile(data.componentName + '.tsx', component);
-    createFile(data.componentName + '.interface.ts', interfaces);
-    if (!data.styles) {
-      return;
+    saveFile(data.componentName + '.tsx', component);
+    saveFile(data.componentName + '.interface.ts', interfaces);
+    if (data.styles) {
+      saveFile(data.componentName + getStylesExtension(), getStylesTemplate());
     }
-    createFile(data.componentName + getStylesExtension(), getStylesTemplate());
   }
 
-  function createFile(fileName, template) {
-    const fileLocation = path.join(componentDirectory, fileName);
-    const content = template(data);
-
-    if (!data.dryRun) {
-      fs.writeFileSync(fileLocation, content);
-    }
-
-    showNonQuietInfo(fileLocation, data);
-    showVerboseInfo(content, data);
+  function saveFile(fileName, templateFn) {
+    createFile({
+      data,
+      fileLocation: componentDirectory,
+      fileName,
+      templateFn,
+    });
   }
 
   function getStylesExtension() {
