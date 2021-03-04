@@ -1,6 +1,9 @@
-const interfaces = (data) => `export interface ${data.componentName}Props {
+const interfaces = (data) => `interface ${data.componentName}OwnProps {
 
-}`;
+}
+
+export type ${data.componentName}Props = ${data.componentName}OwnProps;
+`;
 
 module.exports = {
   interfaces,
