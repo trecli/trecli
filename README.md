@@ -10,10 +10,6 @@
   Typescript React CLI
 </p>
 
-| :warning: | This tools is currently under intensive development          | :warning: |
-| --------- | ------------------------------------------------------------ | --------- |
-| :warning: | Stay tuned! Production ready version will be available soon! | :warning: |
-
 ## TODO
 
 - [x] Config file support
@@ -23,6 +19,7 @@
 - [ ] Support for Storybook stories
 - [ ] Docs
 - [ ] Rewrite codebase to TS
+- [ ] Write tests
 
 ## Under consideration
 
