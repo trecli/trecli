@@ -15,14 +15,14 @@ const component = (data) => {
       'material-ui': `  const classes = useStyles();\n\n`,
     }[styles] || '';
 
+  const exportString = index || lazyLoaded ? 'export default ' : 'export ';
+
   return `import React from 'react';
 
 import { ${componentName}Props } from './${componentName}.interface';
 ${stylesImport}\
 
-${
-  index || lazyLoaded ? 'export default function' : 'export function'
-} ${componentName}(props: ${componentName}Props) {
+${exportString}function ${componentName}(props: ${componentName}Props) {
 ${stylesUsage}\
   return <>${componentName} rendered</>;
 }`;
